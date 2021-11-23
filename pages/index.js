@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import Form from './form'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -23,32 +23,5 @@ export default function Home() {
         <Form />
       </main>
     </div>
-  )
-}
-
-function Form() {
-  const geocodeIp = async event => {
-    event.preventDefault()
-
-    const res = await fetch('/api/geocodeIp', {
-      body: JSON.stringify({
-        ip_address: event.target.ip_address.value
-      }),
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      method: 'POST'
-    })
-
-    const result = await res.json()
-    console.log("result: " + JSON.stringify(result));
-  }
-
-  return (
-    <form onSubmit={geocodeIp}>
-      <label htmlFor="ip_address">IP Address:</label>
-      <input id="ip_address" name="ip_address" type="text" required />
-      <button type="submit">Submit</button>
-    </form>
   )
 }

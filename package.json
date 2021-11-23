@@ -1,6 +1,7 @@
 {
   "name": "censys-ip-geocoder",
   "private": true,
+  "author": "Ryan McGarvey <famousferret@protonmail.com>",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
